@@ -13,7 +13,9 @@ const LINKS = [
 ];
 
 export default (props) => {
-    const classes = useStyles();
+    const classes = useStyles({
+        fontFamily: 'monospace',
+    });
 
     return (
         <>

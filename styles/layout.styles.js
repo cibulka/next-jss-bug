@@ -7,10 +7,15 @@ const getMediaQuery = (theme, name, rule) => {
     };
 };
 
+const getFunctionalProp = (props) => ({
+    fontFamily: props.fontFamily,
+});
+
 const styles = theme => ({
     main: props => ({
         background: 'red',
         fontStyle: 'italic', // this rule exists in client-side rendering as well
+        ...getFunctionalProp(props), // this functional rule exists in client-side rendering as well
         ...getMediaQuery(theme, 'bigMinWidth', {
             background: 'blue',
         }),
